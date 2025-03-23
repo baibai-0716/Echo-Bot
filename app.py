@@ -182,7 +182,7 @@ def handle_message(event):
               },
               {
                 "type": "span",
-                "text": "About Rooms",
+                "text": "Room Types",
                 "size": "lg"
               }
             ]
