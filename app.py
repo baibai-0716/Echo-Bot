@@ -59,10 +59,71 @@ def handle_message(event):
     text = event.message.text
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
-        if text == '關於鄉道':
+        if text == '探尋鄉道':
             line_flex_json = {
   "type": "carousel",
   "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "image",
+        "size": "full",
+        "aspectRatio": "2:2",
+        "aspectMode": "cover",
+        "url": "https://imgur.com/TZZorzt.jpeg"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xs",
+        "contents": [
+          {
+            "type": "text",
+            "text": "鄉道茶語",
+            "weight": "bold",
+            "size": "xl",
+            "position": "relative",
+            "align": "center",
+            "wrap": True
+          }
+        ],
+        "margin": "none"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "xxl",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "介紹1",
+              "uri": "https://line.me/"
+            },
+            "margin": "none"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "介紹2",
+              "uri": "http://linecorp.com/"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "介紹3",
+              "uri": "http://linecorp.com/"
+            }
+          }
+        ],
+        "margin": "none",
+        "cornerRadius": "none"
+      }
+    },
     {
       "type": "bubble",
       "hero": {
@@ -75,30 +136,19 @@ def handle_message(event):
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "sm",
+        "spacing": "xs",
         "contents": [
           {
             "type": "text",
-            "text": "房型資訊",
-            "wrap": True,
+            "text": "居所篇章",
             "weight": "bold",
-            "size": "xl"
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "contents": [
-              {
-                "type": "text",
-                "text": "一室一景，靜候遠人。晨曦灑落木窗，微風輕拂茶香，每一間房都是詩意的棲居，安放身心，靜享時光的溫柔流轉。",
-                "wrap": True,
-                "weight": "regular",
-                "size": "sm",
-                "color": "#A39183"
-              }
-            ]
+            "size": "xl",
+            "position": "relative",
+            "align": "center",
+            "wrap": True
           }
-        ]
+        ],
+        "margin": "none"
       },
       "footer": {
         "type": "box",
@@ -106,12 +156,42 @@ def handle_message(event):
         "spacing": "sm",
         "contents": [
           {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "官方網站",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "艾草房",
+                  "text": "#艾草房型資訊"
+                }
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "檀香房",
+                  "text": "#檀香房型資訊"
+                }
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "沉香房",
+                  "text": "#沉香房型資訊"
+                }
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "message",
+                  "label": "入住須知",
+                  "text": "#入住須知"
+                }
+              }
+            ]
           }
         ]
       }
@@ -127,45 +207,53 @@ def handle_message(event):
       },
       "body": {
         "type": "box",
-        "layout": "vertical",
-        "spacing": "sm",
+        "layout": "horizontal",
+        "spacing": "xs",
         "contents": [
           {
             "type": "text",
-            "text": "交通資訊",
-            "wrap": True,
+            "text": "歸途引路︱啟程指南",
             "weight": "bold",
-            "size": "xl"
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "contents": []
-          },
-          {
-            "type": "text",
-            "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向。",
-            "wrap": True,
-            "weight": "regular",
-            "size": "sm",
-            "color": "#A39183"
+            "size": "xl",
+            "position": "relative",
+            "align": "center",
+            "wrap": True
           }
-        ]
+        ],
+        "margin": "none"
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "sm",
+        "spacing": "xxl",
         "contents": [
           {
             "type": "button",
             "action": {
               "type": "message",
-              "label": "影片導覽",
-              "text": "交通影片導覽"
+              "label": "鄉道地址",
+              "text": "#鄉道地址"
+            },
+            "margin": "none"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "開車必看",
+              "uri": "https://www.youtube.com/playlist?list=PLcWAIlKa95I9BWt9o5phqdXyiyFEASMex"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "大眾交通",
+              "text": "#大眾交通"
             }
           }
-        ]
+        ],
+        "margin": "none"
       }
     },
     {
@@ -175,49 +263,57 @@ def handle_message(event):
         "size": "full",
         "aspectRatio": "2:2",
         "aspectMode": "cover",
-        "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0580_00539-min.jpg"
+        "url": "https://liveyilan.com/wp-content/uploads/2024/08/187979-696x522.jpg"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "sm",
+        "spacing": "xs",
         "contents": [
           {
             "type": "text",
-            "text": "景點推薦",
-            "wrap": True,
+            "text": "茶屋漫遊誌",
             "weight": "bold",
-            "size": "xl"
-          },
-          {
-            "type": "box",
-            "layout": "baseline",
-            "contents": []
-          },
-          {
-            "type": "text",
-            "text": "景點推薦介紹文字",
-            "wrap": True,
-            "weight": "regular",
-            "size": "sm",
-            "color": "#A39183"
+            "size": "xl",
+            "position": "relative",
+            "align": "center",
+            "wrap": True
           }
-        ]
+        ],
+        "margin": "none"
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "sm",
+        "spacing": "xxl",
         "contents": [
           {
             "type": "button",
             "action": {
+              "type": "message",
+              "label": "散步地圖",
+              "text": "#散步地圖"
+            },
+            "margin": "none"
+          },
+          {
+            "type": "button",
+            "action": {
               "type": "uri",
-              "label": "景點地圖",
+              "label": "宜蘭精選旅程",
               "uri": "https://reurl.cc/zpj9p6"
             }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "管家深度漫遊",
+              "text": "#管家深度漫遊"
+            }
           }
-        ]
+        ],
+        "margin": "none"
       }
     }
   ]
