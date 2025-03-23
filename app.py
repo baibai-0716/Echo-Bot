@@ -69,8 +69,9 @@ def handle_message(event):
         "type": "image",
         "size": "full",
         "aspectRatio": "2:2",
-        "aspectMode": "cover",
-        "url": "https://imgur.com/TZZorzt.jpeg"
+        "url": "https://imgur.com/TZZorzt.jpeg",
+        "position": "relative",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
@@ -79,20 +80,45 @@ def handle_message(event):
         "contents": [
           {
             "type": "text",
-            "text": "鄉道茶語",
-            "weight": "bold",
-            "size": "xl",
-            "position": "relative",
-            "align": "center",
-            "wrap": True
+            "contents": [
+              {
+                "type": "span",
+                "text": "鄉道茶語｜",
+                "weight": "bold",
+                "size": "xl"
+              },
+              {
+                "type": "span",
+                "text": "About",
+                "style": "normal",
+                "weight": "bold",
+                "size": "lg"
+              }
+            ],
+            "align": "center"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "一條鄉道，連接著田野與茶香；一間茶屋，安放著歲月與風聲。在這裡，時間慢了下來，讓人得以停步，細品茶湯、靜聽自然，尋回心之所安。",
+                "size": "sm",
+                "margin": "sm",
+                "gravity": "center",
+                "wrap": True
+              }
+            ]
           }
         ],
-        "margin": "none"
+        "margin": "none",
+        "maxHeight": "200px"
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xxl",
+        "spacing": "xl",
         "contents": [
           {
             "type": "button",
@@ -121,7 +147,9 @@ def handle_message(event):
           }
         ],
         "margin": "none",
-        "cornerRadius": "none"
+        "cornerRadius": "none",
+        "justifyContent": "center",
+        "alignItems": "center"
       }
     },
     {
@@ -140,12 +168,38 @@ def handle_message(event):
         "contents": [
           {
             "type": "text",
-            "text": "居所篇章",
+            "text": "居所篇章｜About Rooms",
             "weight": "bold",
             "size": "xl",
             "position": "relative",
             "align": "center",
-            "wrap": True
+            "wrap": True,
+            "contents": [
+              {
+                "type": "span",
+                "text": "居所篇章｜",
+                "size": "xl"
+              },
+              {
+                "type": "span",
+                "text": "About Rooms",
+                "size": "lg"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "一室一景，靜候遠人。晨曦灑落木窗，微風輕拂茶香，每一間房都是詩意的棲居，安放身心，靜享時光的溫柔流轉。",
+                "size": "sm",
+                "margin": "sm",
+                "gravity": "center",
+                "wrap": True
+              }
+            ]
           }
         ],
         "margin": "none"
@@ -191,7 +245,8 @@ def handle_message(event):
                   "text": "#入住須知"
                 }
               }
-            ]
+            ],
+            "alignItems": "center"
           }
         ]
       }
@@ -207,17 +262,43 @@ def handle_message(event):
       },
       "body": {
         "type": "box",
-        "layout": "horizontal",
+        "layout": "vertical",
         "spacing": "xs",
         "contents": [
           {
             "type": "text",
-            "text": "歸途引路︱啟程指南",
+            "text": "啟程指南︱Map",
             "weight": "bold",
             "size": "xl",
             "position": "relative",
             "align": "center",
-            "wrap": True
+            "wrap": True,
+            "contents": [
+              {
+                "type": "span",
+                "text": "啟程指南｜",
+                "size": "xl"
+              },
+              {
+                "type": "span",
+                "text": "Traffic Guidance",
+                "size": "lg"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向。",
+                "size": "sm",
+                "margin": "sm",
+                "gravity": "center",
+                "wrap": True
+              }
+            ]
           }
         ],
         "margin": "none"
@@ -277,7 +358,33 @@ def handle_message(event):
             "size": "xl",
             "position": "relative",
             "align": "center",
-            "wrap": True
+            "wrap": True,
+            "contents": [
+              {
+                "type": "span",
+                "text": "茶屋漫遊誌｜",
+                "size": "xl"
+              },
+              {
+                "type": "span",
+                "text": "Travel Map",
+                "size": "lg"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "茶屋之外，是寫滿故事的小路。隨興選一條，或通往綠蔭深處，或遇見稻浪翻騰，讓步伐決定風景，讓心境丈量遠方。",
+                "size": "sm",
+                "margin": "sm",
+                "gravity": "center",
+                "wrap": True
+              }
+            ]
           }
         ],
         "margin": "none"
@@ -317,7 +424,7 @@ def handle_message(event):
       }
     }
   ]
-}           
+}          
             line_flex_str = json.dumps(line_flex_json)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
