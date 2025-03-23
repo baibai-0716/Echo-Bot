@@ -429,7 +429,7 @@ def handle_message(event):
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='詳細說明',contents=FlexContainer.from_json(line_flex_str))]
+                    messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
         
