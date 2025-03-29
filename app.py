@@ -396,3 +396,106 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+if text == '預約一場漫遊':
+            line_flex_json = {
+  "type": "bubble",
+  "size": "mega",
+  "hero": {
+    "type": "image",
+    "url": "https://static.owlting.com/booking/image/h/9b1e91af-ca77-438d-bc38-5726214b9872/images/mlvUicVMjmILrhHVCszY7voZpLh9W7aWKuiKhPZv.jpeg",
+    "size": "full",
+    "aspectRatio": "2:2",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "預約一場漫遊",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "預約一場慢旅，為身心留白。輕點指間，茶香與田野已在遠方靜候您的到來。",
+            "size": "xs",
+            "wrap": True,
+            "margin": "none"
+          }
+        ]
+      }
+    ],
+    "spacing": "sm"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "horizontal",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "優惠方案說明",
+              "text": "#優惠方案說明"
+            },
+            "margin": "none"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "私訊人工預約",
+              "text": "#私訊人工預約-鄉"
+            }
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "鄉道線上預約",
+              "uri": "https://booking.owlting.com/countryroad?lang=zh_TW&adult=1&child=0&infant=0"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ]
+      }
+    ],
+    "flex": 0
+  }
+}
+                line_flex_str = json.dumps(line_flex_json)
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='預約一場漫遊',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
