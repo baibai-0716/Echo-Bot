@@ -59,99 +59,10 @@ def handle_message(event):
     text = event.message.text
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
-        if text == '探尋鄉道':
+        if text == '關於鄉道':
             line_flex_json = {
   "type": "carousel",
   "contents": [
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "image",
-        "size": "full",
-        "aspectRatio": "2:2",
-        "url": "https://imgur.com/TZZorzt.jpeg",
-        "position": "relative",
-        "aspectMode": "cover"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "xs",
-        "contents": [
-          {
-            "type": "text",
-            "contents": [
-              {
-                "type": "span",
-                "text": "鄉道茶語｜",
-                "weight": "bold",
-                "size": "xl"
-              },
-              {
-                "type": "span",
-                "text": "About",
-                "style": "normal",
-                "weight": "bold",
-                "size": "lg"
-              }
-            ],
-            "align": "center"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "一條鄉道，連接著田野與茶香；一間茶屋，安放著歲月與風聲。在這裡，時間慢了下來，讓人得以停步，細品茶湯、靜聽自然，尋回心之所安。",
-                "size": "sm",
-                "margin": "sm",
-                "gravity": "center",
-                "wrap": True
-              }
-            ]
-          }
-        ],
-        "margin": "none",
-        "maxHeight": "200px"
-      },
-      "footer": {
-        "type": "box",
-        "layout": "vertical",
-        "spacing": "xl",
-        "contents": [
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "初心理念",
-              "text": "#初心理念"
-            },
-            "margin": "none"
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "環境一隅",
-              "text": "#環境一隅"
-            }
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "常見問題",
-              "text": "#常見問題"
-            }
-          }
-        ],
-        "margin": "none",
-        "cornerRadius": "none",
-        "justifyContent": "center",
-        "alignItems": "center"
-      }
-    },
     {
       "type": "bubble",
       "hero": {
@@ -164,45 +75,30 @@ def handle_message(event):
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xs",
+        "spacing": "sm",
         "contents": [
           {
             "type": "text",
-            "text": "居所篇章｜About Rooms",
-            "weight": "bold",
-            "size": "xl",
-            "position": "relative",
-            "align": "center",
+            "text": "房型資訊",
             "wrap": True,
-            "contents": [
-              {
-                "type": "span",
-                "text": "居所篇章｜",
-                "size": "xl"
-              },
-              {
-                "type": "span",
-                "text": "Room Types",
-                "size": "lg"
-              }
-            ]
+            "weight": "bold",
+            "size": "xl"
           },
           {
             "type": "box",
-            "layout": "vertical",
+            "layout": "baseline",
             "contents": [
               {
                 "type": "text",
                 "text": "一室一景，靜候遠人。晨曦灑落木窗，微風輕拂茶香，每一間房都是詩意的棲居，安放身心，靜享時光的溫柔流轉。",
+                "wrap": True,
+                "weight": "regular",
                 "size": "sm",
-                "margin": "sm",
-                "gravity": "center",
-                "wrap": True
+                "color": "#A39183"
               }
             ]
           }
-        ],
-        "margin": "none"
+        ]
       },
       "footer": {
         "type": "box",
@@ -210,43 +106,12 @@ def handle_message(event):
         "spacing": "sm",
         "contents": [
           {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "沉香房",
-                  "text": "#沉香房型資訊"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "檀香房",
-                  "text": "#檀香房型資訊"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "艾草房",
-                  "text": "#艾草房型資訊"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "入住須知",
-                  "text": "#入住須知"
-                }
-              }
-            ],
-            "alignItems": "center"
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
           }
         ]
       }
@@ -263,78 +128,44 @@ def handle_message(event):
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xs",
+        "spacing": "sm",
         "contents": [
           {
             "type": "text",
-            "text": "啟程指南︱Map",
-            "weight": "bold",
-            "size": "xl",
-            "position": "relative",
-            "align": "center",
+            "text": "交通資訊",
             "wrap": True,
-            "contents": [
-              {
-                "type": "span",
-                "text": "啟程指南｜",
-                "size": "xl"
-              },
-              {
-                "type": "span",
-                "text": "Traffic Guidance",
-                "size": "lg"
-              }
-            ]
+            "weight": "bold",
+            "size": "xl"
           },
           {
             "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向。",
-                "size": "sm",
-                "margin": "sm",
-                "gravity": "center",
-                "wrap": True
-              }
-            ]
+            "layout": "baseline",
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向。",
+            "wrap": True,
+            "weight": "regular",
+            "size": "sm",
+            "color": "#A39183"
           }
-        ],
-        "margin": "none"
+        ]
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xxl",
+        "spacing": "sm",
         "contents": [
           {
             "type": "button",
             "action": {
               "type": "message",
-              "label": "鄉道地址",
-              "text": "#鄉道地址"
-            },
-            "margin": "none"
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "開車必看",
-              "uri": "https://www.youtube.com/playlist?list=PLcWAIlKa95I9BWt9o5phqdXyiyFEASMex"
-            }
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "大眾交通",
-              "text": "#大眾交通"
+              "label": "影片導覽",
+              "text": "交通影片導覽"
             }
           }
-        ],
-        "margin": "none"
+        ]
       }
     },
     {
@@ -344,450 +175,57 @@ def handle_message(event):
         "size": "full",
         "aspectRatio": "2:2",
         "aspectMode": "cover",
-        "url": "https://liveyilan.com/wp-content/uploads/2024/08/187979-696x522.jpg"
+        "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0580_00539-min.jpg"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xs",
+        "spacing": "sm",
         "contents": [
           {
             "type": "text",
-            "text": "茶屋漫遊誌",
-            "weight": "bold",
-            "size": "xl",
-            "position": "relative",
-            "align": "center",
+            "text": "景點推薦",
             "wrap": True,
-            "contents": [
-              {
-                "type": "span",
-                "text": "茶屋漫遊誌｜",
-                "size": "xl"
-              },
-              {
-                "type": "span",
-                "text": "Travel Map",
-                "size": "lg"
-              }
-            ]
+            "weight": "bold",
+            "size": "xl"
           },
           {
             "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "茶屋之外，是寫滿故事的小路。隨興選一條，或通往綠蔭深處，或遇見稻浪翻騰，讓步伐決定風景，讓心境丈量遠方。",
-                "size": "sm",
-                "margin": "sm",
-                "gravity": "center",
-                "wrap": True
-              }
-            ]
+            "layout": "baseline",
+            "contents": []
+          },
+          {
+            "type": "text",
+            "text": "景點推薦介紹文字",
+            "wrap": True,
+            "weight": "regular",
+            "size": "sm",
+            "color": "#A39183"
           }
-        ],
-        "margin": "none"
+        ]
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "spacing": "xxl",
+        "spacing": "sm",
         "contents": [
           {
             "type": "button",
             "action": {
-              "type": "message",
-              "label": "散步地圖",
-              "text": "#散步地圖"
-            },
-            "margin": "none"
-          },
-          {
-            "type": "button",
-            "action": {
               "type": "uri",
-              "label": "宜蘭精選旅程",
+              "label": "景點地圖",
               "uri": "https://reurl.cc/zpj9p6"
             }
-          },
-          {
-            "type": "button",
-            "action": {
-              "type": "message",
-              "label": "管家深度漫遊",
-              "text": "#管家深度漫遊"
-            }
           }
-        ],
-        "margin": "none"
+        ]
       }
     }
   ]
-}  
+}           
             line_flex_str = json.dumps(line_flex_json)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
+                    messages=[FlexMessage(alt_text='詳細說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
-             elif text == '#艾草房型資訊':
-            line_flex_json ={
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.imgur.com/aiaKJf1.jpeg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-2F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      },
-      "size": "giga"
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9806_00087-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-3F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9194_00834-1-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-5F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9254_00892-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#半戶外觀景陽台",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.imgur.com/HPA1aXY.jpeg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#淋浴間(無浴缸)",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    }
-  ]
-}
-            line_flex_str = json.dumps(line_flex_json)
-            line_bot_api.reply_message(
-                ReplyMessageRequest(
-                    reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='艾草房型資訊',contents=FlexContainer.from_json(line_flex_str))]
-                )
-            )
-        
