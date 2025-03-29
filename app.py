@@ -396,361 +396,194 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
-        elif text == '#艾草房型資訊':
+        elif text == '#預約一場漫遊':
             line_flex_json = {
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.imgur.com/aiaKJf1.jpeg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-2F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      },
-      "size": "giga"
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9806_00087-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-3F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9194_00834-1-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房-5F",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#和式乳膠標準床墊",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9254_00892-min.jpg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#半戶外觀景陽台",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "giga",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://i.imgur.com/HPA1aXY.jpeg",
-            "size": "full",
-            "aspectMode": "cover",
-            "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
-            }
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "艾草房",
-                    "size": "xl",
-                    "color": "#ffffff",
-                    "weight": "bold"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "baseline",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "#淋浴間(無浴缸)",
-                    "color": "#ebebeb",
-                    "size": "sm",
-                    "flex": 0
-                  }
-                ],
-                "spacing": "lg"
-              }
-            ],
-            "position": "absolute",
-            "offsetBottom": "0px",
-            "offsetStart": "0px",
-            "offsetEnd": "0px",
-            "paddingAll": "20px",
-            "paddingTop": "18px",
-            "background": {
-              "type": "linearGradient",
-              "angle": "0deg",
-              "startColor": "#00000099",
-              "endColor": "#00000000"
-            }
-          }
-        ],
-        "paddingAll": "0px"
-      }
+  "type": "bubble",
+  "size": "mega",
+  "hero": {
+    "type": "image",
+    "url": "https://static.owlting.com/booking/image/h/9b1e91af-ca77-438d-bc38-5726214b9872/images/mlvUicVMjmILrhHVCszY7voZpLh9W7aWKuiKhPZv.jpeg",
+    "size": "full",
+    "aspectRatio": "2:2",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
     }
-  ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "預約一場漫遊",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center"
+      },
+      {
+        "type": "box",
+        "layout": "baseline",
+        "contents": [
+          {
+            "type": "text",
+            "text": "預約一場慢旅，為身心留白。輕點指間，茶香與田野已在遠方靜候您的到來。",
+            "size": "xs",
+            "wrap": True,
+            "margin": "none"
+          }
+        ]
+      }
+    ],
+    "spacing": "sm"
+  },
+  "footer": {
+    "type": "box",
+    "layout": "horizontal",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "優惠方案說明",
+              "text": "#優惠方案說明"
+            },
+            "margin": "none"
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "私訊人工預約",
+              "text": "#私訊人工預約-鄉"
+            }
+          }
+        ]
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "鄉道線上預約",
+              "uri": "https://booking.owlting.com/countryroad?lang=zh_TW&adult=1&child=0&infant=0"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "官方網站",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ]
+      }
+    ],
+    "flex": 0
+  }
 }
         line_flex_str = json.dumps(line_flex_json)
         line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='艾草房型資訊',contents=FlexContainer.from_json(line_flex_str))]
+                    messages=[FlexMessage(alt_text='預約一場漫遊',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )   
+elif text == '#分館拾光':
+            line_flex_json = {
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/w0U89mPqW7ukKc0m6W4nK3kAulIqpwHUo01sGChJ.jpeg",
+    "size": "full",
+    "aspectRatio": "2:2",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "https://line.me/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "分館拾光",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "介紹文字",
+            "size": "sm",
+            "margin": "none",
+            "wrap": True
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "空間介紹",
+          "text": "#空間介紹"
+        }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "溫泉湯屋",
+          "text": "#溫泉湯屋"
+        }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "message",
+          "label": "私訊人工預約",
+          "text": "#私訊人工預約-松"
+        }
+      }
+    ],
+    "flex": 0
+  }
+}
+ line_flex_str = json.dumps(line_flex_json)
+        line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='分館拾光',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )   
