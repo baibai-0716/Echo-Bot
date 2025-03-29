@@ -396,3 +396,317 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+        elif text == '#艾草房型資訊':
+            line_flex_json = 
+                    "type": "text",
+                    "text": "#和式乳膠標準床墊",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      },
+      "size": "giga"
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9806_00087-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房-3F",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#和式乳膠標準床墊",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9194_00834-1-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房-5F",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#和式乳膠標準床墊",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9254_00892-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#半戶外觀景陽台",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/HPA1aXY.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#淋浴間(無浴缸)",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    }
+  ]
+}
+ line_flex_str = json.dumps(line_flex_json)
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='艾草房型資訊',contents=FlexContainer.from_json(line_flex_str))]
+                )
