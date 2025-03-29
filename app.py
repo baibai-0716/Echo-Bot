@@ -396,7 +396,7 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
-if text == '預約一場漫遊':
+elif text == '預約一場漫遊':
             line_flex_json = {
   "type": "bubble",
   "size": "mega",
@@ -497,5 +497,13 @@ if text == '預約一場漫遊':
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
                     messages=[FlexMessage(alt_text='預約一場漫遊',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
+
+else:
+line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[TextMessage(text=event.message.text)]
                 )
             )
