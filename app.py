@@ -397,7 +397,50 @@ def handle_message(event):
                 )
             )
         elif text == '#艾草房型資訊':
-            line_flex_json = 
+            line_flex_json ={
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/aiaKJf1.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房-2F",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
                     "type": "text",
                     "text": "#和式乳膠標準床墊",
                     "color": "#ebebeb",
