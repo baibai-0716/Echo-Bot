@@ -424,7 +424,14 @@ def handle_message(event):
       }
     }
   ]
-}    
+}  
+            line_flex_str = json.dumps(line_flex_json)
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
              elif text == '#艾草房型資訊':
             line_flex_json ={
   "type": "carousel",
@@ -780,7 +787,7 @@ def handle_message(event):
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
+                    messages=[FlexMessage(alt_text='艾草房型資訊',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
         
