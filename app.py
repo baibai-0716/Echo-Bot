@@ -52,13 +52,12 @@ def callback():
         abort(400)
 
     return 'OK'
-
-
 @line_handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
     text = event.message.text
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
+
         if text == '探尋鄉道':
             line_flex_json = {
   "type": "carousel",
