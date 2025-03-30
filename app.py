@@ -1613,3 +1613,315 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='沉香房型資訊',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+        elif text =='#環境一隅':
+            line_flex_json = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9956_00220-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9875_00146-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9902_00171-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9848_00126-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0668_00603-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0580_00539-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    }
+  ]
+}
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='環境一隅',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
+        elif text =='#空間介紹':
+            line_flex_json = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9956_00220-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9875_00146-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9902_00171-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9848_00126-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0668_00603-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0580_00539-min.jpg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    }
+  ]
+}
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='空間介紹',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
