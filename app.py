@@ -459,7 +459,7 @@ def handle_message(event):
             "action": {
               "type": "message",
               "label": "私訊人工預約",
-              "text": "#私訊人工預約"
+              "text": "#私訊人工預約-鄉"
             }
           }
         ]
