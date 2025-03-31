@@ -290,9 +290,9 @@ def handle_message(event):
           {
             "type": "button",
             "action": {
-              "type": "message",
+              "type": "uri",
               "label": "開車必看",
-              "text": "#開車必看"
+              "uri": "https://www.youtube.com/playlist?list=PLcWAIlKa95I9BWt9o5phqdXyiyFEASMex"
             }
           },
           {
