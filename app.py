@@ -57,7 +57,6 @@ def handle_message(event):
     text = event.message.text
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
-
         if text == '探尋鄉道':
             line_flex_json = {
   "type": "carousel",
@@ -933,6 +932,76 @@ def handle_message(event):
         "paddingAll": "0px"
       }
     },
+{
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/0HXDw2B.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "艾草房",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#免治馬桶　#乾濕分離",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
     {
       "type": "bubble",
       "size": "giga",
@@ -1207,7 +1276,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/IMG_1166-1.jpg",
+            "url": "https://imgur.com/Rro6LwJ.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1241,7 +1310,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#免治馬桶　#私人浴缸",
+                    "text": "#乾濕分離　#私人浴缸　#對外窗",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1290,7 +1359,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9531_00998-1-1-min.jpg",
+            "url": "https://imgur.com/rpv8ykX.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1311,7 +1380,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "沉香房(待改圖)",
+                    "text": "沉香房",
                     "size": "xl",
                     "color": "#ffffff",
                     "weight": "bold"
@@ -1324,7 +1393,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗",
+                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗　#可加1-2床",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1381,7 +1450,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9531_00998-1-1-min.jpg",
+            "url": "https://imgur.com/FbFf0jv.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1415,7 +1484,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗",
+                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗　#可加1-2床",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1542,7 +1611,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/IMG_1166-1.jpg",
+            "url": "https://imgur.com/tvukeNS.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1576,7 +1645,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#免治馬桶　#私人浴缸",
+                    "text": "#私人浴缸　#對外窗",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1762,6 +1831,7 @@ def handle_message(event):
     }
   ]
 }
+            line_flex_str = json.dumps(line_flex_json)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
@@ -1781,16 +1851,77 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9956_00220-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/wi4OzLIj2sG7XsGm61AWvDeKmJzdGDaE5w5q4YoT.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "星滿意竹",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#樓中樓設計　#可加1-2床",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "4樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1805,16 +1936,77 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9875_00146-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/3hxp4sUNk45K1omLdsMMasS48SZWDquh727g7OZM.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "星滿意竹",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#懶骨頭沙發區",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "4樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1829,16 +2021,77 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9902_00171-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/w0U89mPqW7ukKc0m6W4nK3kAulIqpwHUo01sGChJ.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "星滿意竹",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#半露天泡湯池",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "4樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1853,16 +2106,77 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC9848_00126-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/VuUG95980XtFefVLx9GqSspvakxV5VZvQkEkNTVp.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "有View最美",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#塌塌米觀景區",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "3樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1877,16 +2191,77 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0668_00603-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/t2t5SdOoAI4xkufXNPYGXKxcyNGQnbBSwgQ5Iay9.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "有View最美",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#一般雙人浴池　#對外窗",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "3樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1901,16 +2276,332 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://liveyilan.com/wp-content/uploads/2016/02/DSC0580_00539-min.jpg",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/Ef0yamZ8CE3v8yF2Dnaid7u0Hud1VG76Y9yHxclJ.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
-            "gravity": "top",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "https://liveyilan.com/countryroad/"
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "日式簡約",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#室內沙發區",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
             }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "3樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/AGos5YRaqBlYUr6iDOZ6nYS6keXQXihntYZHTrXe.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "日式簡約",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#下崁式浴池　#泡起來較深",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "3樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/A8TwoY357ZoukAfOIy74xZ9R5sdWWsU9S2BKCTIW.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "悠悠時光",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#四人房　#兩張標準雙人床",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "2樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/4x1bKa0P87CVPKkyMNmNbArrnXsmRoUcNVigu7GE.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "悠悠時光",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#一般雙人浴池　#對外窗",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "2樓",
+                "color": "#ffffff",
+                "align": "center",
+                "size": "md"
+              }
+            ],
+            "position": "absolute",
+            "cornerRadius": "20px",
+            "offsetTop": "18px",
+            "backgroundColor": "#95CACA",
+            "offsetStart": "18px",
+            "height": "25px",
+            "width": "53px"
           }
         ],
         "paddingAll": "0px"
@@ -1918,6 +2609,7 @@ def handle_message(event):
     }
   ]
 }
+            line_flex_str = json.dumps(line_flex_json)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
