@@ -941,7 +941,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://i.imgur.com/0HXDw2B.jpeg",
+            "url": "https://i.imgur.com/Np0D3x9.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1011,7 +1011,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://i.imgur.com/HPA1aXY.jpeg",
+            "url": "https://i.imgur.com/Dyvi9x7.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1276,7 +1276,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://i.imgur.com/CXtGHOL.jpeg",
+            "url": "https://i.imgur.com/nAwaq5A.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1751,7 +1751,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://imgur.com/tvukeNS.jpeg",
+            "url": "https://i.imgur.com/CXtGHOL.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
