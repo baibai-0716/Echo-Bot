@@ -1094,7 +1094,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://i.imgur.com/11di1tl.jpeg",
+            "url": "https://i.imgur.com/FoRSlfc.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1128,7 +1128,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗",
+                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗　#可加1床",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1219,7 +1219,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗",
+                    "text": "#高磅數加大雙人彈簧床　#室內面山觀景窗　#可加1床",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1276,7 +1276,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://imgur.com/Rro6LwJ.jpeg",
+            "url": "https://i.imgur.com/CXtGHOL.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1310,7 +1310,77 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#乾濕分離　#私人浴缸　#對外窗",
+                    "text": "#乾濕分離　#免治馬桶",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/CXtGHOL.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "檀香房",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#私人浴缸　#對外窗",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -1359,7 +1429,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://imgur.com/rpv8ykX.jpeg",
+            "url": "https://i.imgur.com/BX1Ukcy.jpeg",
             "size": "full",
             "aspectMode": "cover",
             "aspectRatio": "2:2",
@@ -1576,6 +1646,76 @@ def handle_message(event):
                   {
                     "type": "text",
                     "text": "#半戶外觀景陽台",
+                    "color": "#ebebeb",
+                    "size": "sm",
+                    "flex": 0,
+                    "wrap": True
+                  }
+                ],
+                "spacing": "lg"
+              }
+            ],
+            "position": "absolute",
+            "offsetBottom": "0px",
+            "offsetStart": "0px",
+            "offsetEnd": "0px",
+            "paddingAll": "20px",
+            "paddingTop": "18px",
+            "background": {
+              "type": "linearGradient",
+              "angle": "0deg",
+              "startColor": "#00000099",
+              "endColor": "#00000000"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://i.imgur.com/nAwaq5A.jpeg",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:2",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "沉香房",
+                    "size": "xl",
+                    "color": "#ffffff",
+                    "weight": "bold"
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "baseline",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "#乾濕分離　#免治馬桶",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
