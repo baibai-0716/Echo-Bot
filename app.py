@@ -1978,31 +1978,6 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='環境一隅',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
-        elif text =='#環境一隅':
-            message = '【鄉道茶屋包棟溫馨小提醒】
-【包棟房型安排】
-1️⃣依照人數安排入住房型，平日小包棟4間優先安排於同樓層之艾草、沉香房各2間；小包棟5間以上，由管家視入住人數調整。
-2️⃣【入住退房及門禁時間】
--入住時間:15:30-22:00
--退房時間:11:00前
--為維護住客安全，車道門禁時段為23:00至隔日7:00
-3️⃣【住宿環境說明】
--公共區域晚上22點過後，請降低音量勿大聲喧嘩，影響附近住戶。
--環境清幽，故無提供烤肉、KTV、麻將及廚房外借服務，嚴禁明火及高電壓烹煮設備。
--全館室內禁菸(含陽台、廁所)及寵物，禁鞭炮、酗酒、賭博、吸毒轟趴等不法行為。
--為維護安全，公共區域設有監視器，僅供執法人員使用。
--館內裝飾品多為茶具、木石雕刻等工藝收藏品，請勿私自觸碰避免損壞，共同愛護館內設備及家具。
--每月固定清消，因民宿位置於山野間難免蚊蟲出沒，備有防蚊液可供戶外活動使用。
-4️⃣【管家駐館時間】
-服務時段:7:00-23:00
-非服務時段入住於館內獨立空間，可及時提供協助及旅遊諮詢，不影響旅客住宿。'
-            line_flex_str = json.dumps(line_flex_json)
-            line_bot_api.reply_message(
-                ReplyMessageRequest(
-                    reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='環境一隅',contents=FlexContainer.from_json(line_flex_str))]
-                )
-            )
         elif text =='#空間介紹':
             line_flex_json = {
   "type": "carousel",
