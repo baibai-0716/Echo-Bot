@@ -37,17 +37,15 @@ app = Flask(__name__)
 configuration = Configuration(access_token=os.getenv('CHANNEL_ACCESS_TOKEN'))
 line_handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
+timers = {}
 
 @app.route("/callback", methods=['POST'])
 def callback():
-    # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
-    # get request body as text
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
-    # handle webhook body
     try:
         line_handler.handle(body, signature)
     except InvalidSignatureError:
@@ -55,7 +53,6 @@ def callback():
         abort(400)
 
     return 'OK'
-    timers = {}
 
 @line_handler.add(PostbackEvent)
 def handle_postback(event):
@@ -102,6 +99,7 @@ def handle_message(event):
     text = event.message.text
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
+        
         if text == '探尋鄉道':
             line_flex_json = {
   "type": "carousel",
@@ -2903,4 +2901,5 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+
 
