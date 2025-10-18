@@ -268,7 +268,7 @@ def handle_message(event):
           },
           {
             "type": "text",
-            "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向",
+            "text": "曲徑通幽，遠塵歸野。沿著鄉道而來，讓城市的喧囂漸行漸遠，只需一步，便能抵達心之所向。",
             "wrap": True,
             "size": "xs"
           }
@@ -394,19 +394,19 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='探尋鄉道',contents=FlexContainer.from_json(line_flex_str))]
                 )
             ) 
-        elif text =='預約一場漫遊':
+        elif text =='預約一場慢旅':
             line_flex_json = {
   "type": "bubble",
   "size": "mega",
   "hero": {
     "type": "image",
-    "url": "https://static.owlting.com/booking/image/h/9b1e91af-ca77-438d-bc38-5726214b9872/images/mlvUicVMjmILrhHVCszY7voZpLh9W7aWKuiKhPZv.jpeg",
+    "url": "https://liveyilan.com/wp-content/uploads/2025/04/進入官網-2.png",
     "size": "full",
     "aspectRatio": "2:2",
     "aspectMode": "cover",
     "action": {
       "type": "uri",
-      "uri": "https://line.me/"
+      "uri": "https://liveyilan.com/countryroad/"
     }
   },
   "body": {
@@ -415,7 +415,7 @@ def handle_message(event):
     "contents": [
       {
         "type": "text",
-        "text": "預約一場漫遊",
+        "text": "預約一場慢旅",
         "weight": "bold",
         "size": "xl",
         "align": "center"
@@ -458,8 +458,8 @@ def handle_message(event):
             "type": "button",
             "action": {
               "type": "message",
-              "label": "私訊人工預約",
-              "text": "#私訊人工預約-鄉"
+              "label": "包棟方案說明",
+              "text": "#包棟方案說明"
             }
           }
         ]
@@ -479,9 +479,9 @@ def handle_message(event):
           {
             "type": "button",
             "action": {
-              "type": "uri",
-              "label": "官方網站",
-              "uri": "https://liveyilan.com/countryroad/"
+              "type": "message",
+              "label": "私訊人工預約",
+              "text": "#私訊人工預約-鄉"
             }
           }
         ]
@@ -494,7 +494,7 @@ def handle_message(event):
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='預約一場漫遊',contents=FlexContainer.from_json(line_flex_str))]
+                    messages=[FlexMessage(alt_text='預約一場慢旅',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
         elif text =='分館拾光':
@@ -505,11 +505,7 @@ def handle_message(event):
     "url": "https://static.owlting.com/booking/image/h/d1afba1c-30f3-423c-9b65-a6922af450fe/images/w0U89mPqW7ukKc0m6W4nK3kAulIqpwHUo01sGChJ.jpeg",
     "size": "full",
     "aspectRatio": "2:2",
-    "aspectMode": "cover",
-    "action": {
-      "type": "uri",
-      "uri": "https://line.me/"
-    }
+    "aspectMode": "cover"
   },
   "body": {
     "type": "box",
@@ -723,7 +719,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "#和式乳膠標準床墊",
+                    "text": "#雙人彈簧床",
                     "color": "#ebebeb",
                     "size": "sm",
                     "flex": 0,
@@ -2754,5 +2750,98 @@ def handle_message(event):
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
                     messages=[FlexMessage(alt_text='空間介紹',contents=FlexContainer.from_json(line_flex_str))]
+                )
+            )
+        elif text =='#包棟方案說明':
+            line_flex_json = {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://lihi2.com/m1tUu",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://lihi2.com/m1tUu"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "👉點我看包棟溫馨小提醒",
+              "text": "#包棟溫馨小提醒"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "👉點我看官網資訊",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "giga",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "image",
+            "url": "https://lihi2.com/hudqo",
+            "size": "full",
+            "aspectMode": "cover",
+            "aspectRatio": "2:3",
+            "gravity": "top",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "https://lihi2.com/hudqo"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "message",
+              "label": "👉點我看包棟溫馨小提醒",
+              "text": "#包棟溫馨小提醒"
+            }
+          },
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "👉點我看官網資訊",
+              "uri": "https://liveyilan.com/countryroad/"
+            }
+          }
+        ],
+        "paddingAll": "0px"
+      }
+    }
+  ]
+}
+            line_flex_str = json.dumps(line_flex_json)
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
