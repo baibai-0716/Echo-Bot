@@ -1,10 +1,6 @@
 from flask import Flask, request, abort
-from linebot.v3 import (
-    WebhookHandler
-)
-from linebot.v3.exceptions import (
-    InvalidSignatureError
-)
+from linebot.v3 import WebhookHandler
+from linebot.v3.exceptions import InvalidSignatureError
 from linebot.v3.messaging import (
     Configuration,
     ApiClient,
@@ -43,7 +39,6 @@ timers = {}
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
-
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
@@ -55,6 +50,7 @@ def callback():
 
     return 'OK'
 
+
 @line_handler.add(PostbackEvent)
 def handle_postback(event):
     data = event.postback.data
@@ -63,9 +59,7 @@ def handle_postback(event):
     with ApiClient(configuration) as api_client:
         line_bot_api = MessagingApi(api_client)
 
-        # ✅ 當按下「開始泡湯」時
         if data == "action=start_bathing":
-            # 立即回覆確認訊息
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
@@ -73,18 +67,17 @@ def handle_postback(event):
                 )
             )
 
-            # 開始計時（用 Thread 避免阻塞）
             def remind_later():
                 time.sleep(30 * 60)
                 line_bot_api.push_message(
-                    ReplyMessageRequest(
+                    PushMessageRequest(
                         to=user_id,
                         messages=[TextMessage(text="嗨～已經過半小時囉，請回報安全狀況💧")]
                     )
                 )
                 time.sleep(30 * 60)
                 line_bot_api.push_message(
-                    ReplyMessageRequest(
+                    PushMessageRequest(
                         to=user_id,
                         messages=[TextMessage(text="已經過 1 小時囉～請再次確認安全狀況💧")]
                     )
@@ -2902,6 +2895,7 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+
 
 
 
