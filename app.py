@@ -10,6 +10,7 @@ from linebot.v3.messaging import (
     ApiClient,
     MessagingApi,
     ReplyMessageRequest,
+    PushMessageRequest,
     TextMessage,
     FlexMessage,
     FlexBubble,
@@ -25,7 +26,7 @@ from linebot.v3.messaging import (
 from linebot.v3.webhooks import (
     MessageEvent,
     TextMessageContent,
-    Postbackevent
+    PostbackEvent
 )
 import json
 import os
@@ -2901,5 +2902,6 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+
 
 
