@@ -24,10 +24,13 @@ from linebot.v3.messaging import (
 )
 from linebot.v3.webhooks import (
     MessageEvent,
-    TextMessageContent
+    TextMessageContent,
+    Postbackevent
 )
 import json
 import os
+import threading
+import time
 
 app = Flask(__name__)
 
@@ -52,6 +55,48 @@ def callback():
         abort(400)
 
     return 'OK'
+    timers = {}
+
+@line_handler.add(PostbackEvent)
+def handle_postback(event):
+    data = event.postback.data
+    user_id = event.source.user_id
+
+    with ApiClient(configuration) as api_client:
+        line_bot_api = MessagingApi(api_client)
+
+        # ✅ 當按下「開始泡湯」時
+        if data == "action=start_bathing":
+            # 立即回覆確認訊息
+            line_bot_api.reply_message(
+                ReplyMessageRequest(
+                    reply_token=event.reply_token,
+                    messages=[TextMessage(text="已開始計時，半小時後會提醒您回報安全狀況💧")]
+                )
+            )
+
+            # 開始計時（用 Thread 避免阻塞）
+            def remind_later():
+                time.sleep(30 * 60)
+                line_bot_api.push_message(
+                    ReplyMessageRequest(
+                        to=user_id,
+                        messages=[TextMessage(text="嗨～已經過半小時囉，請回報安全狀況💧")]
+                    )
+                )
+                time.sleep(30 * 60)
+                line_bot_api.push_message(
+                    ReplyMessageRequest(
+                        to=user_id,
+                        messages=[TextMessage(text="已經過 1 小時囉～請再次確認安全狀況💧")]
+                    )
+                )
+
+            t = threading.Thread(target=remind_later)
+            t.start()
+            timers[user_id] = t
+
+
 @line_handler.add(MessageEvent, message=TextMessageContent)
 def handle_message(event):
     text = event.message.text
@@ -569,18 +614,31 @@ def handle_message(event):
           "label": "私訊人工預約",
           "text": "#私訊人工預約-松"
         }
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#00BFA5",
+        "action": {
+          "type": "postback",
+          "label": "✅ 開始泡湯",
+          "data": "action=start_bathing"
+        }
       }
     ],
     "flex": 0
   }
 }
-            line_flex_str = json.dumps(line_flex_json)
-            line_bot_api.reply_message(
-                ReplyMessageRequest(
-                    reply_token=event.reply_token,
-                    messages=[FlexMessage(alt_text='分館拾光',contents=FlexContainer.from_json(line_flex_str))]
-                )
-            )
+    line_flex_str = json.dumps(line_flex_json)
+    line_bot_api.reply_message(
+        ReplyMessageRequest(
+            reply_token=event.reply_token,
+            messages=[FlexMessage(alt_text='分館拾光', contents=FlexContainer.from_json(line_flex_str))]
+        )
+    )
         elif text =='#艾草房型資訊':
             line_flex_json = {
   "type": "carousel",
@@ -2845,3 +2903,4 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
+
