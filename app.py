@@ -2845,4 +2845,3 @@ def handle_message(event):
                     messages=[FlexMessage(alt_text='包棟方案說明',contents=FlexContainer.from_json(line_flex_str))]
                 )
             )
-
